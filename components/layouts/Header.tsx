@@ -1,21 +1,27 @@
-import Image from 'next/image'
-import img from '@/public/nino.png'
+type Props = {
+    links: string[]
+}
 
-export const Header = () => {
+export const Header = (props: Props) => {
+
     return (
-        <header className="sticky top-0 w-full z-50 flex justify-center p-4 border-b-4 sm:border-b-8 border-black bg-white">
+        <header className="sticky top-0 w-full z-50 flex justify-center p-4 
+                            sm:border-b-8 border-black bg-white">
             {/* blog title */}
-            <div className="flex justify-center items-center text-3xl sm:text-7xl font-bold italic">
-                <div>
-                    Rudy's Tech Blog
+            <div className="w-full flex flex-row justify-around items-center text-xl
+                            font-bold">
+                <div className='mr-4 ml-2 w-2/12 text-center text-4xl bg-red-500 text-white 
+                            font-weight-800'>
+                    P
                 </div>
-                <div className="w-6/12 sm:w-6/12">
-                    <Image
-                        className="rounded-2xl"
-                        src={img} alt=""
-                        width={300}
-                    />
-                </div>
+                {
+                    props.links.map((link, i) =>
+                        <div className={"px-3 py-1 font-bold" + " " +
+                                        `${i === 0 ? "text-red-500 border-b-2 border-red-500" : ""}` }>
+                            {link}
+                        </div>
+                    )
+                }
             </div>
         </header>
     )
