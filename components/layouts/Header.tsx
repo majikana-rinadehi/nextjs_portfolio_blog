@@ -5,8 +5,7 @@ type Props = {
 export const Header = (props: Props) => {
 
     return (
-        <header className="sticky top-0 w-full z-50 flex justify-center p-4 
-                            sm:border-b-8 border-black bg-white">
+        <header className="sticky top-0 w-full z-50 flex justify-center p-4 bg-[#ECECEC]">
             {/* blog title */}
             <div className="w-full flex flex-row justify-around items-center text-xl
                             font-bold">
@@ -16,7 +15,9 @@ export const Header = (props: Props) => {
                 </div>
                 {
                     props.links.map((link, i) =>
-                        <div className={"px-3 py-1 font-bold" + " " +
+                        <div
+                            key={i} 
+                            className={"px-3 py-1 font-bold" + " " +
                                         `${i === 0 ? "text-red-500 border-b-2 border-red-500" : ""}` }>
                             {link}
                         </div>
