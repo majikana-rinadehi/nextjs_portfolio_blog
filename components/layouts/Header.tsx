@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 type Props = {
     links: string[]
 }
@@ -19,7 +21,9 @@ export const Header = (props: Props) => {
                             key={i} 
                             className={"px-3 py-1 font-bold" + " " +
                                         `${i === 0 ? "text-red-500 border-b-2 border-red-500" : ""}` }>
-                            {link}
+                            <Link href={link}>
+                                {link}
+                            </Link>
                         </div>
                     )
                 }
