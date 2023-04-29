@@ -1,10 +1,16 @@
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 type Props = {
     links: string[]
 }
 
 export const Header = (props: Props) => {
+
+    const router = useRouter()
+    /** 現在いるページの、スラッシュを含むリンク名(例:"/About") */
+    const activeLink = router.pathname
+    console.log("activeLink:", activeLink)
 
     return (
         <header className="sticky top-0 w-full z-50 flex justify-center p-4 bg-[#ECECEC]">
@@ -17,14 +23,16 @@ export const Header = (props: Props) => {
                 </div>
                 {
                     props.links.map((link, i) =>
-                        <div
-                            key={i} 
-                            className={"px-3 py-1 font-bold" + " " +
-                                        `${i === 0 ? "text-red-500 border-b-2 border-red-500" : ""}` }>
-                            <Link href={link}>
-                                {link}
-                            </Link>
-                        </div>
+                        <Link href={link}>
+                            <div
+                                key={i}
+                                className={`px-3 py-1 font-bold 
+                                            ${"/" + link === activeLink
+                                        ? "text-red-500 border-b-2 border-red-500"
+                                        : ""}`}>
+                                    {link}
+                            </div>
+                        </Link>
                     )
                 }
             </div>

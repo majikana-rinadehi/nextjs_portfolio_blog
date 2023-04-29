@@ -7,7 +7,7 @@ type Props = {
 
 export const CardWorks = (props: Props) => {
     return (
-        <div className={`${props.index > 0 ? "mt-4" : ""} pb-6 rounded-xl shadow-custom bg-white`}>
+        <div className={`${props.index > 0 ? "mt-8" : ""} pb-6 rounded-xl shadow-custom bg-white`}>
             <div className="flex px-8 justify-between">
                 {[...Array(3)].map(_ => (
                     <div className="mt-4 h-28 w-16 bg-slate-300">
