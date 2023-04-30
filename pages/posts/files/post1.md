@@ -3,6 +3,7 @@ title: 'テックブログを一日で作った話'
 date: '2022-07-13'
 description: 'テスト用の記事1でーすw'
 image: nextjs.png
+topics: '["Go","React"]'
 ---
 
 # 目次

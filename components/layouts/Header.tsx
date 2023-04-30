@@ -18,19 +18,23 @@ export const Header = (props: Props) => {
             <div className="w-full flex flex-row justify-around items-center text-xl
                             font-bold">
                 <div className='mr-4 ml-2 w-2/12 text-center text-4xl bg-red-500 text-white 
-                            font-weight-800'>
-                    P
+                                font-weight-800'>
+                    <Link href={"/About"}>
+                        P
+                    </Link>
                 </div>
                 {
                     props.links.map((link, i) =>
-                        <Link href={link}>
+                        <Link href={{
+                            pathname: "/" + link
+                        }}>
                             <div
                                 key={i}
                                 className={`px-3 py-1 font-bold 
                                             ${"/" + link === activeLink
                                         ? "text-red-500 border-b-2 border-red-500"
                                         : ""}`}>
-                                    {link}
+                                {link}
                             </div>
                         </Link>
                     )

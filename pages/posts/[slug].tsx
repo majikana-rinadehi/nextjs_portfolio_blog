@@ -2,6 +2,7 @@ import matter from "gray-matter"
 import fs from "fs"
 import { InferGetStaticPropsType } from "next"
 import { convertMdToHtml } from "@/utils/util"
+import { PostHeader } from "@/components/PostHeader"
 
 // dynamic route の場合 getStaticPaths も必要
 // pre-build する posts の一覧を getStaticProps にわたす
@@ -49,9 +50,15 @@ export async function getStaticProps(context: any) {
 // InferGetStaticPropstType により、getStaticProps の戻り値の型を動的に指定できる
 export const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
-        <div className="prose">
-            <div dangerouslySetInnerHTML={{ __html: props.content}}></div>
-        </div>
+        <>
+            <PostHeader
+                emoji={props.frontMatter.emoji}
+                title={props.frontMatter.title}
+            />
+            <div className="prose">
+                <div dangerouslySetInnerHTML={{ __html: props.content}}></div>
+            </div>
+        </>
     )   
 }
 

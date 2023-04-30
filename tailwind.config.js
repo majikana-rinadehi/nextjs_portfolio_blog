@@ -14,7 +14,30 @@ module.exports = {
       },
       boxShadow: {
         'custom': '4px 4px 4px rgba(0, 0, 0, 0.25)',
-      }
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              fontSize: '2em'
+            },
+            h2: {
+              marginTop: '1em'
+            },
+            code: {
+              margin: 'auto 0.5em',
+              padding: '0.1em',
+              borderRadius: '4px',
+              border: '2px solid #d1d1d1',
+              backgroundColor: '#dddddd',
+              color: 'black',
+            },
+            ul: {
+              paddingLeft: '1em'
+            }
+          },
+        },
+      },
     },
   },
   plugins: [

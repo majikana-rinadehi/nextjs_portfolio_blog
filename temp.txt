@@ -1,0 +1,49 @@
+.
+├── README.md
+├── components
+│   ├── CardBlog.tsx
+│   ├── CardProfile.tsx
+│   ├── CardSkills.tsx
+│   ├── CardWorks.tsx
+│   └── layouts
+│       ├── Footer.tsx
+│       ├── Header.tsx
+│       ├── Layout.tsx
+│       ├── Nav.tsx
+│       └── PostHeader.tsx
+├── next-env.d.ts
+├── next.config.js
+├── package-lock.json
+├── package.json
+├── pages
+│   ├── About.tsx
+│   ├── Blog.tsx
+│   ├── Works.tsx
+│   ├── _app.tsx
+│   ├── _document.tsx
+│   ├── api
+│   │   └── hello.ts
+│   ├── index.tsx
+│   └── posts
+│       ├── [slug].tsx
+│       ├── files
+│       │   ├── post1.md
+│       │   └── post2.md
+│       └── images
+│           ├── img1.png
+│           └── img2.png
+├── postcss.config.js
+├── public
+│   ├── favicon.ico
+│   ├── next.svg
+│   ├── nino.png
+│   └── vercel.svg
+├── styles
+│   └── globals.css
+├── tailwind.config.js
+├── temp.txt
+├── tsconfig.json
+└── utils
+    └── util.ts
+
+10 directories, 36 files

@@ -1,3 +1,6 @@
+import Image from "next/image"
+import img from "@/public/nino.png"
+
 type Props = {
     title: string
     name: string
@@ -11,8 +14,16 @@ export const CardProfile = (props: Props) => {
                 {props.title}
             </div>
             <div className="flex justify-center">
-                <div className="-mt-2 h-24 w-24 rounded-full bg-slate-300">
-                </div>
+                {/* <img
+                    alt="prof"
+                    src={"/nino.png"}
+                    className="h-24 w-24 rounded-full object-cover object-center"
+                /> */}
+                <Image 
+                    src={img} 
+                    alt={"nino"}
+                    className="h-24 w-24 rounded-full object-cover object-center"
+                    />
             </div>
             <div className="mt-2 flex justify-center text-xl">
                 {props.name}

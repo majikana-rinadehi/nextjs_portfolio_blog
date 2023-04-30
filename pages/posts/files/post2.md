@@ -3,6 +3,7 @@ title: 'テスト記事2'
 date: '2022-07-13'
 description: 'テスト用の記事2でーすw'
 image: nextjs.png
+topics: '["Linux", "awk"]'
 ---
 
 # 目次 <!-- omit in toc -->

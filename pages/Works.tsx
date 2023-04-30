@@ -1,29 +1,23 @@
 import { CardWorks } from "@/components/CardWorks"
+import { works } from "@/data/work"
+import { InferGetStaticPropsType } from "next"
 
-export type Work = {
-    title: string
-    description: string
-    skills: string[]
+export const getStaticProps = () => {
+    const props = 
+        {
+            works
+        }
+    return {
+        props
+    }
 }
 
-// TODO: fetch by getStaticProps
-const works: Work[] = [
-    {
-        title: "manage-stock", description: "冷蔵庫・日用品の在庫管理アプリです",
-        skills: ['React', 'Go']
-    },
-    {
-        title: "guchitter", description: "キャラになりきって愚痴を言えるアプリです",
-        skills: ['React', 'Go']
-    },
-]
-
-export const Works = () => {
+export const Works = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
             <div className="flex flex-col justify-between">
                 {/* Card_Works */} 
-                { works.map((work, i) => (
+                { props.works.map((work, i) => (
                     <CardWorks {...work} index={i}/>
                 ))}
             </div>

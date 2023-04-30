@@ -1,23 +1,18 @@
 import { CardProfile } from "@/components/CardProfile"
 import { CardSkills, SkillGroup } from "@/components/CardSkills"
+import { skills } from "@/data/skill"
+import { InferGetStaticPropsType } from "next"
 
-// TODO: fetch by getStaticProps
-const skillGroups: SkillGroup[] = [
-    {
-        title: "得意・業務経験あり",
-        skills: [
-            'Vue.js', 'Typescript', 'jQuery', 'Java', 'Nest.js'
-        ]
-    }, 
-    {
-        title: "趣味",
-        skills: [
-            'Go', 'React'
-        ]
-    }, 
-]
+export const getStaticProps = () => {
+    const props = {
+        skillGroups: skills
+    }
+    return {
+        props
+    }
+}
 
-export const About = () => {
+export const About = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
             <div className="flex flex-col justify-between">
@@ -26,7 +21,7 @@ export const About = () => {
                     title="Profile" name="Rudy" description="Frontend Developer"/>
                 {/* Card_Skills */}
                 <CardSkills 
-                    title="Skills" skillGroups={skillGroups}/>
+                    title="Skills" skillGroups={props.skillGroups}/>
             </div>
         </>
     )

@@ -1,29 +1,49 @@
+import fs from 'fs'
 import { CardBlog } from "@/components/CardBlog"
+import matter from 'gray-matter'
+import { InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
 
 export type Post = {
     title: string
     tags: string[]
 }
 
-// TODO: fetch by getStaticProps
-const posts: Post[] = [
-    {
-        title: "Next.jsでSSR/SSG/CSR/ISRを使い分ける",
-        tags: ['React', 'Next.js']
-    },
-    {
-        title: "Linuxコマンドだけで爆速で文字列を処理する",
-        tags: ['Linux', 'awk']
-    },
-]
+export const getStaticProps = () => {
+    const filePaths = fs.readdirSync(`pages/posts/files`)
+    const fileInfoList: {
+        title: string
+        topics: string[]
+        slug: string
+    }[] = filePaths.map(filePath => {
+        const file = fs.readFileSync(`pages/posts/files/${filePath}`)
+        const { data } = matter(file)
+        return {
+            title: data.title,
+            topics: data.topics
+                .replace(/^\[|\]$|"|"/g,"")
+                .split(","),
+            slug: filePath.replace(/\.md$/, "")
+        }
+    })
+    return {
+        props: {
+            fileInfoList
+        }
+    }
+}
 
-export const Blog = () => {
+export const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
             <div className="flex flex-col justify-between">
-                {/* Card_Works */} 
-                { posts.map((post, i) => (
-                    <CardBlog {...post} index={i}/>
+                {/* Card_Works */}
+                {props.fileInfoList.map((post, i) => (
+                    <>
+                        <Link href={`/posts/${post.slug}`}>
+                            <CardBlog {...post} index={i} />
+                        </Link>
+                    </>
                 ))}
             </div>
         </>

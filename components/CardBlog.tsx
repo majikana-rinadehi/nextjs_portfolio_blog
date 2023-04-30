@@ -1,6 +1,6 @@
 type Props = {
     title: string
-    tags: string[]
+    topics: string[]
     index: number
 }
 
@@ -12,7 +12,7 @@ export const CardBlog = (props: Props) => {
                 {props.title}
             </div>
             <div className="px-4 flex flex-wrap">
-                {props.tags.map((tag, i) => (
+                {props.topics.map((tag, i) => (
                     <div className="mt-2 mr-3 px-2 bg-slate-300">
                         {/* React.js */}
                         <span className="text-sm">{tag}</span>
