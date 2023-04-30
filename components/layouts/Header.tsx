@@ -25,9 +25,11 @@ export const Header = (props: Props) => {
                 </div>
                 {
                     props.links.map((link, i) =>
-                        <Link href={{
-                            pathname: "/" + link
-                        }}>
+                        <Link
+                            key={i}
+                            href={{
+                                pathname: "/" + link
+                            }}>
                             <div
                                 key={i}
                                 className={`px-3 py-1 font-bold 

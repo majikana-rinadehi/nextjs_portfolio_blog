@@ -21,7 +21,7 @@ export const getStaticProps = () => {
         return {
             title: data.title,
             topics: data.topics
-                .replace(/^\[|\]$|"|"/g,"")
+                .replace(/^\[|\]$|"|"/g, "")
                 .split(","),
             slug: filePath.replace(/\.md$/, "")
         }
@@ -35,18 +35,14 @@ export const getStaticProps = () => {
 
 export const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
-        <>
-            <div className="flex flex-col justify-between">
-                {/* Card_Works */}
-                {props.fileInfoList.map((post, i) => (
-                    <>
-                        <Link href={`/posts/${post.slug}`}>
-                            <CardBlog {...post} index={i} />
-                        </Link>
-                    </>
-                ))}
-            </div>
-        </>
+        <div className="flex flex-col justify-between">
+            {/* Card_Works */}
+            {props.fileInfoList.map((post, i) => (
+                <Link key={i} href={`/posts/${post.slug}`}>
+                    <CardBlog {...post} index={i} />
+                </Link>
+            ))}
+        </div>
     )
 }
 

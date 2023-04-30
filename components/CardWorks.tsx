@@ -9,8 +9,8 @@ export const CardWorks = (props: Props) => {
     return (
         <div className={`${props.index > 0 ? "mt-8" : ""} pb-6 rounded-xl shadow-custom bg-white`}>
             <div className="flex px-8 justify-between">
-                {[...Array(3)].map(_ => (
-                    <div className="mt-4 h-28 w-16 bg-slate-300">
+                {[...Array(3)].map((_, i) => (
+                    <div key={i} className="mt-4 h-28 w-16 bg-slate-300">
                     </div>
                 ))}
             </div>
@@ -24,7 +24,7 @@ export const CardWorks = (props: Props) => {
             </div>
             <div className="px-8 flex flex-wrap">
                 {props.skills.map((skill, i) => (
-                    <div className="mt-2 mr-3 px-2 bg-slate-300">
+                    <div key={i} className="mt-2 mr-3 px-2 bg-slate-300">
                         {/* Vue.js */}
                         <span className="text-sm">{skill}</span>
                     </div>

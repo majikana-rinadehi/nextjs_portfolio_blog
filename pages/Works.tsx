@@ -18,7 +18,7 @@ export const Works = (props: InferGetStaticPropsType<typeof getStaticProps>) => 
             <div className="flex flex-col justify-between">
                 {/* Card_Works */} 
                 { props.works.map((work, i) => (
-                    <CardWorks {...work} index={i}/>
+                    <CardWorks {...work} index={i} key={i}/>
                 ))}
             </div>
         </>

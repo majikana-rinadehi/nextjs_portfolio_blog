@@ -13,7 +13,7 @@ export const CardBlog = (props: Props) => {
             </div>
             <div className="px-4 flex flex-wrap">
                 {props.topics.map((tag, i) => (
-                    <div className="mt-2 mr-3 px-2 bg-slate-300">
+                    <div key={i} className="mt-2 mr-3 px-2 bg-slate-300">
                         {/* React.js */}
                         <span className="text-sm">{tag}</span>
                     </div>

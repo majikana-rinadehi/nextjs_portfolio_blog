@@ -15,20 +15,24 @@ export const CardSkills = (props: Props) => {
                 {props.title}
             </div>
             { props.skillGroups.map((skillGroup, i) => (
-                <>
-                    <div className={`${i > 0 ? "mt-4" : "mt-2"} pl-6 text-sm`}>
+                <div key={`skillGroup_${i}`}>
+                    <div
+                        className={`${i > 0 ? "mt-4" : "mt-2"} pl-6 text-sm`}>
                         {/* 得意・業務経験あり */}
                         {skillGroup.title}
                     </div>
-                    <div  className="px-8 flex flex-wrap">
+                    <div
+                        className="px-8 flex flex-wrap">
                         { skillGroup.skills.map((skill, i) => (
-                            <div className="mt-2 mr-3 px-2 bg-slate-300">
+                            <div
+                                key={i} 
+                                className="mt-2 mr-3 px-2 bg-slate-300">
                                 {/* Vue.js */}
                                 <span className="text-sm">{skill}</span>
                             </div>
                         ))}
                     </div>
-                </>
+                </div>
 
             ))}
         </div>
