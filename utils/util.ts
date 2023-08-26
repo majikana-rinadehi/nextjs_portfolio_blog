@@ -21,6 +21,7 @@ export const convertMdToHtml = async (content: string): Promise<string> => {
     }
 
     const result = await unified()
+        // @ts-ignore
         .use(remarkParse)
         .use(chechAST)
         // @ts-ignore
