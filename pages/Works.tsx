@@ -15,7 +15,7 @@ export const getStaticProps = () => {
 export const Works = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <>
-            <div className="flex flex-col justify-between">
+            <div className="mb-8 flex flex-col justify-between">
                 {/* Card_Works */} 
                 { props.works.map((work, i) => (
                     <CardWorks {...work} index={i} key={i}/>
