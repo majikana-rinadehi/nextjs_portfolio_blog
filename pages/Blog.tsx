@@ -14,6 +14,7 @@ export const getStaticProps = () => {
     const fileInfoList: {
         title: string
         topics: string[]
+        date: string
         slug: string
     }[] = filePaths.map(filePath => {
         const file = fs.readFileSync(`pages/posts/files/${filePath}`)
@@ -23,6 +24,7 @@ export const getStaticProps = () => {
             topics: data.topics
                 .replace(/^\[|\]$|"|"/g, "")
                 .split(","),
+            date: data.date,
             slug: filePath.replace(/\.md$/, "")
         }
     })
@@ -34,10 +36,17 @@ export const getStaticProps = () => {
 }
 
 export const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+
+    const sortedFileInfoList = props.fileInfoList.sort(
+        (post1, post2) => {
+            return post1.date < post2.date ? 1 : -1
+        }
+    )
+
     return (
         <div className="flex flex-col justify-between">
             {/* Card_Works */}
-            {props.fileInfoList.map((post, i) => (
+            {sortedFileInfoList.map((post, i) => (
                 <Link key={i} href={`/posts/${post.slug}`}>
                     <CardBlog {...post} index={i} />
                 </Link>

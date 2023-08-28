@@ -6,8 +6,10 @@ export const CardLogs = () => {
                             sm:pl-10 sm:pt-6 sm:text-3xl">
                 Logs
             </div>
-            <div className="min-h-[26rem] mt-8 w-9/12  bg-[#ECECEC] rounded-[30px]">
-
+            <div className="min-h-[26rem] mt-8 w-9/12 flex flex-col justify-center items-center bg-[#ECECEC] rounded-[30px]">
+                <div className="text-gray-500">
+                    Comming soon...
+                </div>
             </div>
         </div>
     )
