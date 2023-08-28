@@ -8,9 +8,9 @@ export const skills: SkillGroup[] = [
         ]
     },
     {
-        title: "趣味",
+        title: "個人学習",
         skills: [
-            'Go', 'React'
+            'React', 'Go', 'Firebase'
         ]
     },
 ]

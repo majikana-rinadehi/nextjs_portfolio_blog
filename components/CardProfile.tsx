@@ -1,6 +1,7 @@
 import Image from "next/image"
 import img from "@/public/picture.jpg"
 import { useResponsibleLayout } from "@/utils/hooks"
+import { ExternalLinks } from "./ExternalLinks"
 
 type Props = {
     title: string
@@ -28,20 +29,14 @@ export const CardProfile = (props: Props) => {
                                 sm:ml-20 sm:h-44 sm:w-44"
                 />
                 {isMobile ? null :
-                    <div>
+                    <div className="ml-4">
                         <div className="flex text-4xl">
                             {props.name}
                         </div>
                         <div className="mt-3 flex text-2xl">
                             {props.description}
                         </div>
-                        <div className="mt-4 ml-2 flex gap-5">
-                            <div className="h-10 w-10 bg-slate-500">
-                            </div>
-                            <div className="h-10 w-10 bg-slate-500"></div>
-                            <div className="h-10 w-10 bg-slate-500"></div>
-                            <div className="h-10 w-10 bg-slate-500"></div>
-                        </div>
+                        <ExternalLinks hideFlagMap={{ githubSub: true}}/>
                     </div>
                 }
             </div>
@@ -52,6 +47,9 @@ export const CardProfile = (props: Props) => {
                     </div>
                     <div className="mt-1 flex justify-center text-sm">
                         {props.description}
+                    </div>
+                    <div className="flex justify-center items-center">
+                        <ExternalLinks classNameList={["h-7 w-7"]}/>
                     </div>
                 </>
                 : null

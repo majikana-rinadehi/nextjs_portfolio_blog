@@ -55,13 +55,15 @@ export const Header = (props: Props) => {
                 :
                 <>
                     <div className="w-full flex flex-col justify-center items-center gap-5 text-6xl font-weight-800">
-                        <div className="flex">
-                            <div className="rounded-[30px] px-5 py-1 bg-red-500 text-white">
-                                Rudy
-                            </div>'s
-                            <span className="ml-5">tech</span>
-                            <span className="ml-5">Lab.</span>
-                        </div>
+                        <Link href={"/About"}>
+                            <div className="flex">
+                                <div className="rounded-[30px] px-5 py-1 bg-red-500 text-white">
+                                    Rudy
+                                </div>'s
+                                <span className="ml-5">tech</span>
+                                <span className="ml-5">Lab.</span>
+                            </div>
+                        </Link>
                         <div className="w-8/12 flex flex-row justify-start items-center text-4xl font-weight-800">
                             <Links {...props} />
                         </div>
