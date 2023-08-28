@@ -76,7 +76,7 @@ export const CardWorks = (props: Props) => {
             </div>
             <div className='flex gap-4 items-center'>
                 <div className="pt-2 pl-6 text-xl
-                            sm:text-3xl">
+                            sm:text-2xl">
                     {/* manage-stock */}
                     {props.title}
                 </div>
@@ -85,7 +85,7 @@ export const CardWorks = (props: Props) => {
                 />
             </div>
             <div className="px-8 flex text-xs
-                            sm:mt-2 sm:ml-4 sm:text-xl">
+                            sm:mt-2 sm:ml-4 sm:text-lg">
                 {/* 冷蔵庫・日用品の在庫管理アプリです */}
                 {props.description}
             </div>

@@ -44,7 +44,7 @@ export const Blog = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     )
 
     return (
-        <div className="flex flex-col justify-between">
+        <div className="mb-4 flex flex-col justify-between">
             {/* Card_Works */}
             {sortedFileInfoList.map((post, i) => (
                 <Link key={i} href={`/posts/${post.slug}`}>
