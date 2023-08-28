@@ -1,6 +1,6 @@
 ---
 title: 'よく使うLinuxコマンド まとめました'
-date: '2022-07-13'
+date: '2023-07-13'
 description: 'テスト用の記事2でーすw'
 image: nextjs.png
 topics: '["Linux","Linuxコマンド","Bash","Zsh","alias"]'

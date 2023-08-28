@@ -1,12 +1,12 @@
 ---
-title: 'Cookieってなに?おいしいの?'
+title: 'Cookieとは?'
 date: '2022-07-13'
 description: 'テスト用の記事2でーすw'
 image: nextjs.png
 topics: '["Web","cookie", "ブラウザ"]'
 ---
 
-# cookieって何？おいしいの？
+# cookieとは？
 ## cookieの定義
 - サーバからのレスポンスでブラウザに送られ、以降一定期間の間ブラウザに保存され、送信されるデータのこと。
 

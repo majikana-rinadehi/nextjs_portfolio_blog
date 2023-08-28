@@ -1,6 +1,6 @@
 ---
 title: 'OPTIONSリクエスト。プリフライトリクエストとは'
-date: '2022-07-13'
+date: '2023-04-13'
 description: 'テスト用の記事1でーすw'
 image: nextjs.png
 topics: '["Web","ブラウザ","プリフライトリクエスト","Options"]'
