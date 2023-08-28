@@ -31,7 +31,7 @@ export const works: Work[] = [
         }
     },
     {
-        title: "guchitter", description: "キャラになりきって愚痴を言えるアプリです",
+        title: "guchitter", description: "キャラになりきって呟けるアプリです",
         skills: ['React', 'Chakla UI', 'Go', 'Gin', 'Gorm', 'MySQL'],
         url: "https://guchitter-app.vercel.app/",
         images: [guchitter_1, guchitter_2, guchitter_3],
