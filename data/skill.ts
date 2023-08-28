@@ -2,15 +2,17 @@ import { SkillGroup } from "@/components/CardSkills";
 
 export const skills: SkillGroup[] = [
     {
-        title: "得意・業務経験あり",
+        title: "業務経験あり",
         skills: [
-            'Vue.js', 'Typescript', 'jQuery', 'Java', 'Nest.js'
+            'Vue.js', 'Typescript', 'jQuery', 'HTML', 'CSS', 
+            'Nest.js', 'Java', 'Spring Framework',
+            'MySQL', 'Oracle DB'
         ]
     },
     {
-        title: "趣味",
+        title: "個人学習",
         skills: [
-            'Go', 'React'
+            'React', 'Tailwind CSS', 'Go', 'Firebase'
         ]
     },
 ]

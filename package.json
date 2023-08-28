@@ -28,6 +28,7 @@
     "unified": "^10.1.2"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9"
+    "@tailwindcss/typography": "^0.5.9",
+    "react-icons": "^4.10.1"
   }
 }

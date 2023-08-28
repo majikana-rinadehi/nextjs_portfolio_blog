@@ -18,7 +18,7 @@ export const About = (props: InferGetStaticPropsType<typeof getStaticProps>) => 
             <div className="flex flex-col justify-between">
                 {/* Card_Profile */} 
                 <CardProfile 
-                    title="Profile" name="Rudy" description="Frontend Developer"/>
+                    title="Profile" name="Rudy" description="Web Developer"/>
                 {/* Card_Skills */}
                 <CardSkills 
                     title="Skills" skillGroups={props.skillGroups}/>
