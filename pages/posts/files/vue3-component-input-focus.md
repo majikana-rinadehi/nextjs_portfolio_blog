@@ -1,6 +1,6 @@
 ---
 title: '[Vue 3] 親コンポーネントから子コンポーネントのinputをfocusさせる方法'
-date: '2023-04-29'
+date: '2022-04-29'
 description: 'テスト用の記事1でーすw'
 image: nextjs.png
 topics: '["Vue.js]'
