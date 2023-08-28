@@ -3,6 +3,7 @@ import fs from "fs"
 import { InferGetStaticPropsType } from "next"
 import { convertMdToHtml } from "@/utils/util"
 import { PostHeader } from "@/components/PostHeader"
+import Link from "next/link"
 
 // dynamic route の場合 getStaticPaths も必要
 // pre-build する posts の一覧を getStaticProps にわたす
@@ -55,11 +56,19 @@ export const Post = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 emoji={props.frontMatter.emoji}
                 title={props.frontMatter.title}
             />
-            <div className="prose">
-                <div dangerouslySetInnerHTML={{ __html: props.content}}></div>
+            <div className="prose mt-4">
+                <div dangerouslySetInnerHTML={{ __html: props.content }}></div>
+            </div>
+            <div className="flex flex-col justify-center items-center sm:items-start">
+                <div className="my-4 px-3 py-2 bg-green-500 hover:bg-green-700 text-white rounded-lg mr-2 font-black text-sm">
+                    <Link href={'/Blog'}>
+                        ← 記事一覧へ
+                    </Link>
+                </div>
+
             </div>
         </>
-    )   
+    )
 }
 
 export default Post
