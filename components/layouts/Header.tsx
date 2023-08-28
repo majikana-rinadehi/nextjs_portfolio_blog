@@ -1,7 +1,6 @@
 import { useResponsibleLayout } from "@/utils/hooks"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
 
 type Props = {
     links: string[]
@@ -27,7 +26,7 @@ export const Header = (props: Props) => {
                         <div
                             key={i}
                             className={`px-3 py-1 font-bold 
-                                        ${"/" + link === activeLink
+                                        ${"/" + link === activeLink || link === 'Blog' && activeLink.includes('posts')
                                     ? "text-red-500 border-b-2 border-red-500"
                                     : ""}`}>
                             {link}
@@ -54,7 +53,7 @@ export const Header = (props: Props) => {
                 </div>
                 :
                 <>
-                    <div className="w-full flex flex-col justify-center items-center gap-5 text-6xl font-weight-800">
+                    <div className="w-full flex flex-col justify-center items-center gap-5 text-5xl font-weight-800">
                         <Link href={"/About"}>
                             <div className="flex">
                                 <div className="rounded-[30px] px-5 py-1 bg-red-500 text-white">
@@ -64,7 +63,7 @@ export const Header = (props: Props) => {
                                 <span className="ml-5">Lab.</span>
                             </div>
                         </Link>
-                        <div className="w-8/12 flex flex-row justify-start items-center text-4xl font-weight-800">
+                        <div className="w-8/12 flex flex-row justify-start items-center text-3xl font-weight-800">
                             <Links {...props} />
                         </div>
                     </div>

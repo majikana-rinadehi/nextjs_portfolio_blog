@@ -17,23 +17,23 @@ export const CardProfile = (props: Props) => {
         <div className="pb-4 rounded-xl shadow-custom bg-white
                         sm:rounded-[50px]">
             <div className="pt-4 pl-6 text-xl
-                            sm:pl-10 sm:pt-6 sm:text-3xl">
+                            sm:pl-10 sm:pt-6 sm:text-2xl">
                 {props.title}
             </div>
             <div className="flex justify-center
-                            sm:justify-start sm:gap-10">
+                            sm:justify-start sm:gap-5">
                 <Image
                     src={img}
                     alt={"nino"}
                     className="h-24 w-24 rounded-full object-cover object-center
-                                sm:ml-20 sm:h-44 sm:w-44"
+                                sm:ml-16 sm:h-44 sm:w-44"
                 />
                 {isMobile ? null :
-                    <div className="ml-4">
-                        <div className="flex text-4xl">
+                    <div className="ml-2">
+                        <div className="flex text-3xl">
                             {props.name}
                         </div>
-                        <div className="mt-3 flex text-2xl">
+                        <div className="mt-3 flex text-xl">
                             {props.description}
                         </div>
                         <ExternalLinks hideFlagMap={{ githubSub: true}}/>
