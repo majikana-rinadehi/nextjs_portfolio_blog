@@ -20,7 +20,7 @@ export const ExternalLinks = (props: Props) => {
     const hideFlagMap = props.hideFlagMap
 
     return (
-        <div className="mt-4 ml-2 flex gap-4">
+        <div className="mt-4 ml-2 flex gap-4 flex-wrap">
             {hideFlagMap?.github ? null :
                 <a href={props.hrefMap?.github
                     ? props.hrefMap?.github
