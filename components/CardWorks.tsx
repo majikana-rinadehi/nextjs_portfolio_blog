@@ -34,12 +34,13 @@ export const CardWorks = (props: Props) => {
             onClick={() => onClickCloseModal()}
             className='fixed z-50 top-0 left-0 w-screen h-full flex flex-col items-center
                      bg-gray-600/50'>
-            <div className='mt-20 w-11/12 h-5/6 flex flex-col items-center justify-center bg-white
-                            sm:p-4 sm:mt-4 sm:w-fit sm:min-w-min sm:rounded-[30px]'>
+            <div className='w-11/12 rounded-xl p-4 flex flex-col items-center justify-center bg-white
+                            sm:h-5/6 sm:p-4 sm:mt-4 sm:w-fit sm:min-w-min sm:rounded-[30px]'>
                 <Image
                     src={selectImg}
                     alt=''
-                    className='w-11/12 h-5/6 object-cover object-center border-4 border-gray-600'
+                    className='m-4 w-10/12 object-cover object-center border-4 border-gray-600
+                                sm:w-11/12 sm:h-5/6'
                 />
                 <button
                     onClick={onClickCloseModal}
