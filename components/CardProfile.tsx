@@ -2,6 +2,7 @@ import Image from "next/image"
 import img from "@/public/picture.jpg"
 import { useResponsibleLayout } from "@/utils/hooks"
 import { ExternalLinks, type Props as ExternalLinksProps } from "./ExternalLinks"
+import { motion } from 'framer-motion'
 
 type Props = {
     title: string
@@ -14,7 +15,7 @@ export const CardProfile = (props: Props) => {
     const isMobile = useResponsibleLayout()
 
     const externalLinksProps: ExternalLinksProps = {
-        hideFlagMap:{ githubSub: true }
+        hideFlagMap: { githubSub: true }
     }
 
     return (
@@ -25,7 +26,12 @@ export const CardProfile = (props: Props) => {
                 {props.title}
             </div>
             <div className="flex justify-center">
-                <div className="sm:w-1/2 sm:flex sm:flex-row sm:justify-end sm:items-center">
+                <motion.div
+                    className="backdrop-blur-md
+                        sm:w-1/2 sm:flex sm:flex-row sm:justify-end sm:items-center"
+                    initial={{ backdropFilter: 'blur(10px)', opacity: 0 }}
+                    animate={{ backdropFilter: 'blur(0px)', opacity: 1 }}
+                    transition={{ duration: 0.6 }}>
                     <Image
                         src={img}
                         alt={"nino"}
@@ -33,7 +39,7 @@ export const CardProfile = (props: Props) => {
                                 sm:ml-16 sm:h-44 sm:w-44"
                     />
 
-                </div>
+                </motion.div>
                 {isMobile ? null :
                     <div className="w-1/2 ml-2 p-4">
                         <div className="flex text-3xl">
@@ -55,7 +61,7 @@ export const CardProfile = (props: Props) => {
                         {props.description}
                     </div>
                     <div className="flex justify-center items-center">
-                        <ExternalLinks classNameList={["h-7 w-7"]} {...externalLinksProps}/>
+                        <ExternalLinks classNameList={["h-7 w-7"]} {...externalLinksProps} />
                     </div>
                 </>
                 : null

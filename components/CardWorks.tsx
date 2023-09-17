@@ -1,7 +1,8 @@
 import Image, { StaticImageData } from 'next/image'
 import { useState } from 'react'
 import { ExternalLinks } from './ExternalLinks'
-import type { Props as ExternalLinkProps} from '@/components/ExternalLinks'
+import type { Props as ExternalLinkProps } from '@/components/ExternalLinks'
+import { motion } from 'framer-motion'
 
 type Props = {
     title: string
@@ -34,7 +35,7 @@ export const CardWorks = (props: Props) => {
             onClick={() => onClickCloseModal()}
             className='fixed z-50 top-0 left-0 w-screen h-full flex flex-col items-center
                      bg-gray-600/50'>
-            <div className='w-11/12 rounded-xl p-4 flex flex-col items-center justify-center bg-white
+            <motion.div className='w-11/12 rounded-xl p-4 flex flex-col items-center justify-center bg-white
                             sm:h-5/6 sm:p-4 sm:mt-4 sm:w-fit sm:min-w-min sm:rounded-[30px]'>
                 <Image
                     src={selectImg}
@@ -47,7 +48,7 @@ export const CardWorks = (props: Props) => {
                     className='mt-4 rounded-lg p-2 bg-slate-200'>
                     x閉じる
                 </button>
-            </div>
+            </motion.div>
         </dialog>
     )
 
@@ -61,13 +62,18 @@ export const CardWorks = (props: Props) => {
                         {
                             props.images.length > i
                                 ?
-                                <Image
-                                    onClick={() => onClickImage(props.images[i])}
-                                    src={props.images[i]}
-                                    alt={""}
-                                    className="mt-4 h-28 w-16 object-cover object-center border border-slate-300
-                                                sm:mt-7 sm:h-56 sm:w-28 sm:rounded-lg"
-                                />
+                                <motion.div
+                                    initial={{ backdropFilter: 'blur(10px)', opacity: 0 }}
+                                    animate={{ backdropFilter: 'blur(0px)', opacity: 1 }}
+                                    transition={{ duration: 0.6 }}>
+                                    <Image
+                                        onClick={() => onClickImage(props.images[i])}
+                                        src={props.images[i]}
+                                        alt={""}
+                                        className="mt-4 h-28 w-16 object-cover object-center border border-slate-300
+                                                    sm:mt-7 sm:h-56 sm:w-28 sm:rounded-lg"
+                                    />
+                                </motion.div>
                                 :
                                 <div className="mt-4 h-28 w-16 bg-slate-300"></div>
                         }

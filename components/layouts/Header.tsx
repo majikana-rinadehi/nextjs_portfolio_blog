@@ -1,6 +1,7 @@
 import { useResponsibleLayout } from "@/utils/hooks"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import { motion } from 'framer-motion';
 
 type Props = {
     links: string[]
@@ -23,14 +24,15 @@ export const Header = (props: Props) => {
                         href={{
                             pathname: "/" + link
                         }}>
-                        <div
+                        <motion.div
                             key={i}
                             className={`px-3 py-1 font-bold 
                                         ${"/" + link === activeLink || link === 'Blog' && activeLink.includes('posts')
                                     ? "text-red-500 border-b-2 border-red-500"
-                                    : ""}`}>
+                                    : ""}`}
+                            whileTap={{ scale: 1.2 }}>
                             {link}
-                        </div>
+                        </motion.div>
                     </Link>
                 )}
             </>
