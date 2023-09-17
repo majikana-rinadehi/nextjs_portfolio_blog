@@ -3,6 +3,7 @@ import remarkParse from "remark-parse/lib"
 import remarkRehype from "remark-rehype/lib"
 import { unified } from "unified"
 import { visit } from "unist-util-visit"
+import { format } from "date-fns"
 
 /**
  * converts markdown text to html text by library 「remark」
@@ -31,4 +32,18 @@ export const convertMdToHtml = async (content: string): Promise<string> => {
         .process(content)
     
     return result.toString()
+}
+
+type TimeFormat = 'yyyy-MM-dd' | 'yyyy-MM' | 'M/d' | 'yyyy/MM/dd'
+
+/**
+ * Returns timestamp string formatted into specified `format`.  
+ * If `timestamp` is INVALID, returns as-is `timeStamp` string.
+ * @param timeStamp timestamp string
+ * @param {TimeFormat} dateFormat 
+ * @returns 
+ */
+export const getFormattedTimeStamp = (timeStamp: string, dateFormat: TimeFormat): string => {
+    const isValidDate = !isNaN(new Date(timeStamp).getTime())
+    return isValidDate ? format(new Date(timeStamp), dateFormat) : timeStamp
 }
