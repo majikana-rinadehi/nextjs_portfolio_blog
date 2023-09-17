@@ -18,7 +18,7 @@ export const Layout = ({ children }: any) => {
             <Header links={['About', 'Works', 'Blog']} />
             {
                 isMobile ?
-                    <main className="mt-4 w-10/12 min-h-screen">
+                    <main className="mt-8 w-10/12 min-h-screen">
                         {children}
                     </main>
                     :

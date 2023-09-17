@@ -5,7 +5,7 @@ export const useResponsibleLayout = (): boolean => {
 
     useEffect(() => {
 
-        const breakPoint = 768
+        const breakPoint = 640
 
         const handleResize = () => {
             setIsMobile(window.innerWidth <= breakPoint)
